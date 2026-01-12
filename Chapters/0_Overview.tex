@@ -1,0 +1,24 @@
+\chapter*{Course Introduction and Overview}
+\addcontentsline{toc}{chapter}{Course Introduction and Overview}
+\thispagestyle{empty}
+
+\markboth{Course Introduction and Overview}{}
+
+For the purposes of intuition, let's try and think about the concept of geometry. Broadly speaking\footnote{Even though it is ``stupid to try and define mathematical subfields,'' we will do so anyway. This stays between us.}, we can define geometry to be the study of isometries and their invariants - to talk about distance, we only need to be in a metric space. Topology is a `squishy' notion of geometry, where instead of distance preservation, we talk about \textit{nearness} preservation.
+
+Already we lose some information. Isometries are automatically injective; moreover, the inverse of the corestriction of an isometry to its image is also an isometry. So distance-preservation is `invertible' in some sense of the word. Nearness-preservation (which most of us would call ``continuity''), however, is famously not (guaranteed to be) invertible. Topology is thus `more interesting'.
+
+A non-exhaustive list of things we might do with (algebraic) topology:
+\begin{itemize}
+    \item \textbf{Solve equations implicitly:} for example we may have results analogous to the intermediate value theorem (IVT). In the example of IVT analogues, we can see IVT as ``working'' because of path-connectedness of the unit interval. Say we want an analogous statement for when maps $f:D^2\rightarrow \R^2$ (with $D^2$ the disk in $\R^2$) have a 0 - in this instance, we may need a ``higher'' notion of connectivity...
+
+    \item \textbf{Homotopy:} Just as we can talk about `higher' notions of connectivity, we can also talk about `higher' notions of \textit{homotopy}. We are already familiar with questions of path homotopies: can I continuously deform one path to another? We can generalise this in the following manner. If there are two homotopies between two paths, we can ask whether there is a way to continuously deform one \textit{homotopy} to the other. We are all adults here and know how to do induction, so I'm sure we all know where this is going.
+
+    \item \textbf{Local-to-Global:} Do local solutions glue together to give global solutions? Algebraic topology gives us tools that track this. 
+
+    \item \textbf{Makes precise ideas such as ``testing into/out of an object'':} for example, say we want to look at sequences in a metric space $X$, which are just maps from $\N$ to $X$. Sequences essentially tell us all we would want to know about continuity in a metric space - so here our ``test object'' is $\N$, and studying the sequences (i.e. the maps from $\N$ to $X$) can tell us about the metric space. In topological spaces, maybe we want to look at all continuous maps from $n$-simplices into our space - in this instance we would have a different ``test object'' for each dimension, and the test object for dimension $n$ will be the $n$-simplex $\Delta_n = \setst{x \in \R^{n + 1}}{\sum_{i=1}^{n} x_i = 1}$. We can use tools from homological algebra to study maps from the $n$-simplex into the space. The properties we deduce using these methods will tell us a great deal about the space. Moreover, $n$-simplices tell us about $n$-fold homotopies (ie, $2$-simplices tell us about homotopies of paths; $3$-simplices tell us about homotopies of homotopies; and so on).
+
+    As a categorical aside, it turns out that we can define a category $\Delta$ known as the \textbf{simplex category}, whose objects are finite linear orders (labelled $[n] = \set{0 < 1 < \cdots < n}$) and whose morphisms are weakly order-preserving maps (ie, if $x < y$ then $f(x) \leq f(y)$). We can show that the operation taking any $[n]$ to the $n$-simplex $\Delta_n$ defines a contravariant functor $K : \Delta \to \Set$. Spaces and categories admit a ``common generalisation'' in simplicial sets; this area is called infinity category theory.
+\end{itemize}
+
+We will spend the first few weeks talking about fundamental groups and how to compute them. We will then move onto `higher dimensional stuff'.
