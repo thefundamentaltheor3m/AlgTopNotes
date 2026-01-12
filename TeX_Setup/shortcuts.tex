@@ -243,18 +243,70 @@
 \newcommand{\st}{\text{ s.t. }}
 
 
-% BOILERPLATE
+% TOPOLOGY
 
-\newcommand{\liebrac}{\brac{\cdot, \cdot}}
+\renewcommand{\bar}{\overline}
+\newcommand{\ol}[1]{\overline{#1}}
 
-% LIE ALGEBRAS
+\newcommand{\eps}{\varepsilon}
+\newcommand{\interior}[1]{\operatorname{int}\of{#1}}
+\newcommand{\closure}[1]{\operatorname{cl}\of{#1}}
+\newcommand{\cl}{\operatorname{cl}}
 
-\newcommand{\gl}[1]{\mathfrak{gl}\!\parenth{#1}}
-\renewcommand{\sl}[1]{\mathfrak{sl}\!\parenth{#1}}
-\renewcommand{\t}[1]{\mathfrak{t}\!\parenth{#1}}
-\newcommand{\ad}{\operatorname{ad}}
-\newcommand{\pad}[1]{\ad\!\parenth{#1}}
-\newcommand{\Der}[1]{\operatorname{Der}\!\parenth{#1}}
-\renewcommand{\r}{\mathfrak{r}}
-\renewcommand{\u}[1]{\mathfrak{u}\!\parenth{#1}}
-\newcommand{\kof}[1]{\kappa\!\parenth{#1}}
+\newcommand{\nhds}{\mathcal{N}}
+\newcommand{\nbhds}{\mathcal{N}}
+
+% TERESA - Feel free to add more shortcuts here! I really like \vp and \ssq - keep 'em coming
+
+\newcommand{\ssq}{\subseteq}
+\newcommand{\sse}{\subseteq}
+\newcommand{\ve}{\eps}
+
+% CH 2
+
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+
+\newcommand{\mathlib}{\texttt{mathlib}}
+
+\newcommand{\U}{\mathcal{U}}
+
+% Ch 4
+
+\newcommand{\unif}{_{\mathrm{uniform}}}
+\newcommand{\uniform}{_{\mathrm{uniform}}}
+\newcommand{\dunif}{d\unif}
+ 
+\newcommand{\ph}{\text{-}}
+
+\newcommand{\G}{\mathcal{G}}
+
+% Ch 5
+
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DD}{\mathcal{D}}
+
+\newcommand{\HomC}[1]{\Hom_{\CC}\of{#1}}
+\newcommand{\HomD}[1]{\Hom_{\DD}\of{#1}}
+
+\newcommand{\op}{^{\operatorname{op}}}
+
+\newcommand{\Obj}[1]{\operatorname{Obj}\of{#1}}
+\newcommand{\Mor}[1]{\operatorname{Mor}\of{#1}}
+\newcommand{\dom}[1]{\operatorname{dom}\of{#1}}
+\newcommand{\cod}[1]{\operatorname{cod}\of{#1}}
+
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\newcommand{\Pos}{\mathbf{Pos}} % Category of posets
+\newcommand{\Mon}{\mathbf{Mon}} % Category of monoids
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\AbGrp}{\mathbf{AbGrp}}
+\newcommand{\Mod}[1]{#1\!\text{-}\!\mathbf{Mod}}
+\newcommand{\Vect}{\mathbf{Vect}}
+\newcommand{\FDVect}{\mathbf{FDVect}}
+\newcommand{\Top}{\mathbf{Top}}
+
+\newcommand{\Homeo}[1]{\operatorname{Homeo}\of{#1}}
