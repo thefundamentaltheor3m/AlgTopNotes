@@ -1,0 +1,171 @@
+\section{The Setup}
+
+Before we go any further, we will state something (that is par for any course on topology).
+
+\begin{boxconvention}
+    Unless otherwise specified,
+    \begin{itemize}
+        \item All maps in this course will be assumed to be continuous.
+        \item The (uppercase) letters $X$, $Y$ and $Z$ will denote topological spaces.
+    \end{itemize}
+\end{boxconvention}
+
+\subsection{Paths and Homotopies}
+
+We begin by defining the notion of `deformation' we talked about so handwavily just a few moments ago.
+
+\begin{boxdefinition}[Homotopy of Continuous Maps]
+    Let $X$ and $Y$ be topological spaces and let $f, g : X \to Y$ be (continuous) functions. A \textbf{homotopy from $f$ to $g$} is a (continuous) map $H : X \times I \to Y$ such that for all $x \in X$,
+    \begin{align*}
+        H(x, 0) = f(x) \qquad \text{and} \qquad H(x, 1) = g(x)
+    \end{align*}
+    If a homotopy exists between $f$ and $g$, we say they are \textbf{homotopic}, and we write $f \simeq g$.
+\end{boxdefinition}
+
+It is not hard to see that homotopy (or more precisely, the property of being homotopic) is an equivalence relation on the set of continuous functions from one space to another. In particular, it doesn't matter whether we say `$f$ is homotopic to $g$' or `$g$ is homotopic to $f$'.
+
+\begin{boxdefinition}[Paths and Loops]
+    A \textbf{path} in a topological space $X$ is a continuous map $\gamma : [0, 1] \to X$. A path $\gamma$ is a \textbf{loop} if $\gamma(0) = \gamma(1)$.
+\end{boxdefinition}
+
+Since life is too short, we will adopt the following notation.
+
+\begin{boxnotation}
+    Unless otherwise specified, the symbol $I$ will denote the unit interval $[0, 1]$.
+\end{boxnotation}
+
+There are obviously many examples of paths. In fact, there are many examples of homotopic paths.
+
+\begin{boxexample}
+    Any two paths in $\R^n$ (with the same endpoints) are homotopic. For example, if $\alpha, \beta : I \to \R^n$ are paths with the same endpoints, then
+    \begin{align*}
+        H : I \times I \to \R^n : (s, t) \mapsto t \cdot \alpha(s) + (1 - t) \cdot \beta(s)
+    \end{align*}
+    is a homotopy between the paths.
+\end{boxexample}
+
+Really, it only makes sense to talk about homotopies between paths whose endpoints are the same. That being said, our definition of homotopies is permissive enough that this is not necessarily true of a homotopy. Therefore, we will introduce separate notation for what it means for paths with the same endpoints to be homotopic (notation that emphasises that their endpoints are the same).
+
+\begin{boxnotation}
+    If $\alpha$ and $\beta$ with the same endpoints, we will write
+    \begin{align*}
+        \alpha \hdi \beta
+    \end{align*}
+    to indicate that $\alpha$ and $\beta$ are homotopic.
+\end{boxnotation}
+
+It turns out that paths can be composed, provided they are `compatible'.
+
+\begin{proposition}[Composing Paths]
+    Fix points $x_0, x_1, x_2 \in X$. If $\gamma$ is a path from $x_0$ to $x_1$ and $\delta$ is a path from $x_1$ to $x_2$, then the function
+    \begin{align*}
+        \eps : [0, 1] \to X : t \mapsto
+        \begin{cases}
+            \gamma\of{2t} & \text{ if } 0 \leq t \leq \frac{1}{2} \\
+            \delta\of{2t - 1} & \text{ if } \frac{1}{2} \leq t \leq 1
+        \end{cases}
+    \end{align*}
+    is a path between $x_0$ and $x_2$.
+\end{proposition}
+\begin{proof}
+    It is clear that $\eps$ is a well-defined function: at the point $t = \frac{1}{2}$,
+    \begin{align*}
+        \gamma\of{2t} = \gamma\of{1} = x_1 = \delta\of{0} = \delta\of{2t - 1}
+    \end{align*}
+    So indeed the function is well-defined.
+
+    All we need to show is that $\eps$ is continuous. But this is true because of a homework exercise from General Topology\todo{Add ref} in which we showed that if we have a space that is a union of two closed sets then we can continuous `glue' together continuous functions that agree on the overlap of these closed sets. So $\eps$ is the `gluing' of $\gamma$ of $\delta$, and is hence continuous.
+\end{proof}
+
+\begin{boxdefinition}[Composition of Paths]
+    Fix points $x_0, x_1, x_2 \in X$. If $\gamma$ is a path from $x_0$ to $x_1$ and $\delta$ is a path from $x_1$ to $x_2$, then the function $\eps : [0, 1] \to X$ defined as above is called the \textbf{composition} of $\gamma$ and $\delta$.
+    
+    We will denote it $\delta \star \gamma$, $\delta * \gamma$, $\delta \cdot \gamma$ or simply $\delta \gamma$.
+\end{boxdefinition}
+
+\begin{boxwarning}
+    We emphasise that $\delta \gamma$ means
+    \begin{center}
+        \textbf{First do $\gamma$, then do $\delta$.}
+    \end{center}
+    In other words, we obey the convention we normally use when we do function composition.
+\end{boxwarning}
+
+\begin{boxwarning}
+    You know everything I just said? Be warned, I may not always heed my own warning and might write $\gamma \delta$ to mean $\delta \gamma$ sometimes. The real warning is, just use your head, typecheck that function compositions and path concatenations are all ok, and you should be fine. Just read the vibe and you should be ok.
+\end{boxwarning}
+
+Finally, we define the notion of an inverse path.
+
+\begin{boxdefinition}[Inverse Path]
+    Given a path $\alpha : I \to X$, we define the \textbf{inverse path} $\bar{\alpha} : I \to X$ by $\bar{\alpha}(t) := \alpha(1 - t)$ for all $t \in I$.
+\end{boxdefinition}
+
+We will now take a brief detour into the world of groupoids.
+
+\subsection{Groupoids}
+
+Here, we will assume some familiarity with Category Theory. For a quick and dirty introduction to the subject, read \sorry.\todo{Add refs}
+
+Recall that we can view a group as a (small) category, with the morphisms being its action on itself.
+
+\begin{boxexample}[A Group as a (Small) Category]\label{Ch1:Eg:Group_as_Category}
+    Fix a group $G$. We can turn it into a small category with one single object $\star$ and one morphism from $\star$ to itself corresponding to each group element $g$.
+\end{boxexample}
+
+We define a groupoid to be a generalisation of the above example that allows for more than one object.
+
+\begin{boxdefinition}[Groupoid]\label{Ch1:Def:Groupoid}
+    A \textbf{groupoid} is a small category in which every morphism is invertible.
+\end{boxdefinition}
+
+Comparing \Cref{Ch1:Def:Groupoid} and \Cref{Ch1:Eg:Group_as_Category}, the folllowing is evident.
+
+\begin{boxproposition}
+    A group is a groupoid with only one object.
+\end{boxproposition}
+
+\subsection{The Fundamental Groupoid}
+
+Fix a topological space $X$. We ask ourselves the following question: can we associate a groupoid to $X$? As it turns out, we can.
+
+\begin{boxdefinition}
+    The \textbf{fundamental groupoid of $X$}, denoted $\pi_1(X)$, is the category with the following data:
+    \begin{itemize}
+        \item The object set is $X$.
+        \item For each $x, y \in X$, define the set of morphisms $\Hom(x, y)$ to be the set of all paths from $x$ to $y$, up to homotopy.
+        \item For $x, y, z \in X$, $[\gamma] \in \Hom(x, y)$ and $[\delta] \in \Hom(y, z)$, define $[\delta] \circ [\gamma]$ to be $[\delta \star \gamma]$.
+        \item For $x, y \in X$ and $[\gamma] \in \Hom(x, y)$, define the inverse operation $[\gamma]\inv$ to be $\brac{\bar{\gamma}}$.
+    \end{itemize}
+\end{boxdefinition}
+
+We have not really shown that this composition is associative (and of course it is not something that should be shown \textit{after} the definition but rather something that should be shown \textit{before}) but we'll do it now.
+
+\begin{boxlemma}
+    Let $\phi : I \to I$ be a path such that $\phi(0) = 0$ and $\phi(1) = 1$. For any path $\gamma : I \to X$, $\gamma \circ \phi \hdi \gamma$.
+\end{boxlemma}
+\begin{proof}
+    The function
+    \begin{align*}
+        H : I \times I \to X : (s, t) \mapsto \gamma\of{st + (1-t)\phi(s)}
+    \end{align*}
+    is an explicit homotopy.
+\end{proof}
+
+\begin{boxcorollary}
+    For all paths $\alpha, \beta, \gamma : I \to X$ that are compatible,
+    \begin{align*}
+        \gamma \star \parenth{\beta \star \alpha} \hdi \parenth{\gamma \star \beta} \star \alpha
+    \end{align*}
+\end{boxcorollary}
+
+Thus, concatenation gives rise to a well-defined (associative) composition on homotopy classes, thus, on the fundamental groupoid.
+
+Recall that a group is a groupoid with a single object. So, it stands to reason that the fundamental groupoid, except when we look at just one point in our space (and paths from that point to itself) rather than \textit{all} points in our space (and \textit{all} paths), should be a group. This is precisely the fundamental group.
+
+\begin{boxdefinition}[The Fundamental Group]
+    Fix a point $x_0 \in X$. The \textbf{fundamental group of $X$ based at $x_0$} is the set
+    \begin{align*}
+        \pi_1\of{X; x_0} = \Hom_{\pi_1(X)}\of{x_0, x_0}
+    \end{align*}
+\end{boxdefinition}
