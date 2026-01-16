@@ -119,13 +119,13 @@ We define a groupoid to be a generalisation of the above example that allows for
     A \textbf{groupoid} is a small category in which every morphism is invertible.
 \end{boxdefinition}
 
-Comparing \Cref{Ch1:Def:Groupoid} and \Cref{Ch1:Eg:Group_as_Category}, the folllowing is evident.
+Comparing \Cref{Ch1:Def:Groupoid} and \Cref{Ch1:Eg:Group_as_Category}, the following is evident.
 
 \begin{boxproposition}
     A group is a groupoid with only one object.
 \end{boxproposition}
 
-\subsection{The Fundamental Groupoid}
+\subsection{The Fundamental Group(oid)}
 
 Fix a topological space $X$. We ask ourselves the following question: can we associate a groupoid to $X$? As it turns out, we can.
 
@@ -152,7 +152,7 @@ We have not really shown that this composition is associative (and of course it 
     is an explicit homotopy.
 \end{proof}
 
-\begin{boxcorollary}
+\begin{boxcorollary}\label{Ch1:Cor:path_comp_assoc}
     For all paths $\alpha, \beta, \gamma : I \to X$ that are compatible,
     \begin{align*}
         \gamma \star \parenth{\beta \star \alpha} \hdi \parenth{\gamma \star \beta} \star \alpha
@@ -169,3 +169,127 @@ Recall that a group is a groupoid with a single object. So, it stands to reason 
         \pi_1\of{X; x_0} = \Hom_{\pi_1(X)}\of{x_0, x_0}
     \end{align*}
 \end{boxdefinition}
+
+Some fundamental groups are easy to compute and some are difficult.
+
+\begin{boxexample}
+    $\pi_1\of{\R^n}$ is trivial.
+\end{boxexample}
+
+\subsection{Basic Properties of the Fundamental Group}
+
+\begin{boxtheorem}
+    For any space $X$ and basepoint $x_0 \in X$, $\pi_1\of{X, x_0}$ is a group under the composition operation $\brac{\gamma} \cdot \brac{\gamma'} = \brac{\gamma \star \gamma'}$.
+\end{boxtheorem}
+\begin{proof}
+    This should just follow trivially from the definition (because we did `check' that $\pi_1(X)$ is a groupoid), but let's play the game and check the axioms anyway.
+    \begin{itemize}
+        \item \underline{Identity:} The identity element is the loop $c_{x_0} : I \to X : t \mapsto x_0$. Indeed, $c_{x_0} \star \gamma \hdi \gamma \hdi \gamma \star c_{x_0}$ via
+        \begin{align*}
+            \Phi : I \to I : t \mapsto \begin{cases}
+                2t & \text{ if } t \leq \frac{1}{2} \\
+                1 & \text{ if } t \geq \frac{1}{2}
+            \end{cases}
+        \end{align*}
+
+        \item \underline{Inverses:} Recall that we defined the inverse of a path $\gamma$ to be the path with the time parameter going in the opposite direction - $\bar{\gamma}(t) := \gamma(1 - t)$. It's not hard to show that for all loops $\gamma$ based at $x_0$, $\gamma \star \bar{\gamma} \hdi \bar{\gamma} \star \gamma$.
+
+        \item \underline{Associativity:} This is precisely \Cref{Ch1:Cor:path_comp_assoc}.
+    \end{itemize}
+\end{proof}
+
+\begin{boxtheorem}
+    For $X$ a topological space with $x_0,x_1 \in X$, and $\alpha : I \to X$ a path from $x_0$ to $x_1$ ($\alpha(0)=x_0, \alpha(1)=x_1$), then $\pi_1(X,x_0) \cong \pi_1(X,x_1)$.
+\end{boxtheorem}
+\begin{quote}
+    \textit{There is really only one reasonable way to attempt to do this. And when you do it, surprise surprise, it works...}
+\end{quote}
+\begin{proof}
+    The desired isomorphism is given by conjugation by the path from $x_0$ to $x_1$. Explicitly, if $\alpha : I \to X$ is a path from $x_0$ to $x_1$, we can define $\Phi : \pi_1\of{X, x_0} \to \pi_1\of{X, x_1}$ by
+    \begin{align*}
+        \Phi\of{\brac{\gamma}} := \brac{\bar{\alpha} \star \gamma \star \alpha}
+    \end{align*}
+    It's not very hard to show that this is a group homomorphism: given paths $\brac{\gamma}, \brac{\gamma'} \in \pi_1\of{X, x_0}$, we see that
+    \begin{align*}
+        \Phi\of{\brac{\gamma} \circ \brac{\gamma'}}
+        &= \brac{\bar{\alpha} \star \gamma \star \gamma' \star \alpha} \\
+        &= \brac{\bar{\alpha} \star \gamma \star \alpha \star \bar{\alpha} \star \gamma' \star \alpha} \\
+        &= \brac{\bar{\alpha} \star \gamma \star \alpha} \circ \brac{\bar{\alpha} \star \gamma' \star \alpha} \\
+        &= \Phi\of{\brac{\gamma}} \circ \Phi\of{\brac{\gamma'}}
+    \end{align*}
+    Finally, we can define $\Phi\inv : \pi_1\of{X, x_1} \to \pi_1\of{X, x_0}$ by
+    \begin{align*}
+        \Phi\inv\of{\brac{\gamma}} := \brac{{\alpha} \star \gamma \star \bar{\alpha}}
+    \end{align*}
+    It's not hard to show this is a two-sided inverse.
+\end{proof}
+
+Finally, we show that $\pi_1$ is functorial.
+
+\begin{boxproposition}
+    Let $X$ and $Y$ be topological spaces. Fix a basepoint $x_0 \in X$. For any continuous function $f : X \to Y$, the map
+    \begin{align*}
+        f_* : \pi_1\of{X, x_0} \to \pi_1\of{Y, f\of{x_0}} : \gamma \mapsto \brac{f \circ \gamma}
+    \end{align*}
+    is a well-defined homomorphism of groups.
+\end{boxproposition}
+\begin{proof}
+\sorry
+    
+\end{proof}
+
+% Section break maybe? Let's see where this goes 
+
+\begin{boxdefinition}[Homotopy Equivalence of Spaces] 
+    Let $X$ and $Y$ be topological spaces. If there are maps $f : X \to Y$ and $g : Y \to X$ such that $f \circ g \simeq \id_Y$ and $g \circ f \simeq \id_X$, then we say $X$ and $Y$ are \textbf{homotopy equivalent}. We write $X \simeq Y$.
+\end{boxdefinition}
+% ^ Note this is trivially equal to saying categorical equivalence of the fundamental groupoid i think.
+
+There are many well-known examples of homotopy equivalences of spaces. At some point, we will probably look at \textbf{contractible spaces}, which are spaces that are homotopic to a point.
+
+\begin{boxexample}[Contractibility of the Unit Interval]
+    $I \simeq \set{0}$ via the maps
+    \begin{align*}
+        f : I \to \set{0} : t \mapsto 0
+        \qquad
+        g : \set{0} \to I : 0 \mapsto 0
+    \end{align*}
+    Obviously, $f \circ g = \id_{\set{0}}$. We only need a homotopy in the other direction. Indeed, it's not hard to show that
+    \begin{align*}
+        H : I \times I \to I : (s, t) \mapsto st
+    \end{align*}
+    gives the homotopy $g \circ f \simeq \id_I$.
+\end{boxexample}
+
+We can see the above example as indicative of a more general pattern - if we have spaces $X$ and $Y$ with $Y\ssq X$, then it seems that $X$ and $Y$ should be homotopic if there are no ``holes'' in $X\setminus Y$.
+
+\begin{boxdefinition}[Deformation Retraction]
+    Let $X$ be a topological space. Fix $A \ssq X$ and let $i : A \inj X$ denote the inclusion. A map $r : X \to Y$ is a \textbf{deformation retraction} if $r \circ i = \id_A$ and $i \circ r \simeq \id_X$.
+\end{boxdefinition}
+
+See also \cite[Ch 4, \S 4, Définition 4.3]{EPFLTopologie}.
+
+A special property of deformation retractions is that they induce inclusions of fundamental groups.
+
+\begin{boxconvention}
+    Going forward, unless otherwise specified, arbitrary spaces $X, Y, Z$ etc will be assumed to be path-connected (hopefully for obvious and unproblematic reasons). We will also often omit the basepoint if we know we are working in a path-connected space.
+\end{boxconvention}
+
+\begin{boxlemma}
+    Let $X$ and $Y$ be (path-connected) spaces and let $f_0, f_1 : X \to Y$ be homotopic. Then, $\parenth{f_0}_* = \parenth{f_1}_*$.
+\end{boxlemma}
+\begin{proof}
+    Let $H : X \times I \to Y$ be a homotopy between $f_0$ and $f_1$. The idea is to show that for all $\gamma \in \pi_1\of{X}$, the path $f_1 \circ \gamma$ is homotopic to the path $f_0 \circ \gamma$. \sorry
+\end{proof}
+
+% TODO: This should precede the discussion on deformation retractions, so it should eventually be moved. In fact all of this should be reorganised in to a new section.
+\begin{boxtheorem}
+    If we have $X\simeq Y$ then $\pi_1(X, x_0)\cong \pi_1(Y, y_0)$.
+\end{boxtheorem}
+\begin{proof}
+    Assume we have (continuous) functions $f : X \to Y$ and $g : Y \to X$ such that $f \circ g \simeq \id_Y$ and $g \circ f \simeq \id_X$. We know show that $f_* : \pi_1\of{X, x_0} \to \pi_1\of{Y, f\of{x_0}}$ is a homomorphism; in fact, we will show it is an \textit{iso}morphism. It may not be true that $y_0 = f\of{x_0}$, but since $Y$ is path-connected, we know we have an isomorphism between $\pi_1\of{Y, f\of{x_0}}$ and $\pi_1\of{Y, y_0}$.
+
+    \sorry % Just apply preceding lemma
+\end{proof}
+
+
