@@ -1,0 +1,191 @@
+\section{Intuition, Properties and First Examples}
+
+In this section, we'll outline important properties of the fundamental group and develop tools to compute fundamental groups.
+
+\subsection{First Properties}
+
+\begin{boxtheorem}
+    For any space $X$ and basepoint $x_0 \in X$, $\pi_1\of{X, x_0}$ is a group under the composition operation $\brac{\gamma} \cdot \brac{\gamma'} = \brac{\gamma \star \gamma'}$.
+\end{boxtheorem}
+\begin{proof}
+    This should just follow trivially from the definition (because we did `check' that $\pi_1(X)$ is a groupoid), but let's play the game and check the axioms anyway.
+    \begin{itemize}
+        \item \underline{Identity:} The identity element is the loop $c_{x_0} : I \to X : t \mapsto x_0$. Indeed, $c_{x_0} \star \gamma \hdi \gamma \hdi \gamma \star c_{x_0}$ via
+        \begin{align*}
+            \Phi : I \to I : t \mapsto \begin{cases}
+                2t & \text{ if } t \leq \frac{1}{2} \\
+                1 & \text{ if } t \geq \frac{1}{2}
+            \end{cases}
+        \end{align*}
+
+        \item \underline{Inverses:} Recall that we defined the inverse of a path $\gamma$ to be the path with the time parameter going in the opposite direction - $\bar{\gamma}(t) := \gamma(1 - t)$. It's not hard to show that for all loops $\gamma$ based at $x_0$, $\gamma \star \bar{\gamma} \hdi \bar{\gamma} \star \gamma$.
+
+        \item \underline{Associativity:} This is precisely \Cref{Ch1:Cor:path_comp_assoc}.
+    \end{itemize}
+\end{proof}
+
+\begin{boxtheorem}
+    For $X$ a topological space with $x_0,x_1 \in X$, and $\alpha : I \to X$ a path from $x_0$ to $x_1$ ($\alpha(0)=x_0, \alpha(1)=x_1$), then $\pi_1(X,x_0) \cong \pi_1(X,x_1)$.
+\end{boxtheorem}
+\begin{quote}
+    \textit{There is really only one reasonable way to attempt to do this. And when you do it, surprise surprise, it works...}
+\end{quote}
+\begin{proof}
+    The desired isomorphism is given by conjugation by the path from $x_0$ to $x_1$. Explicitly, if $\alpha : I \to X$ is a path from $x_0$ to $x_1$, we can define $\Phi : \pi_1\of{X, x_0} \to \pi_1\of{X, x_1}$ by
+    \begin{align*}
+        \Phi\of{\brac{\gamma}} := \brac{\bar{\alpha} \star \gamma \star \alpha}
+    \end{align*}
+    It's not very hard to show that this is a group homomorphism: given paths $\brac{\gamma}, \brac{\gamma'} \in \pi_1\of{X, x_0}$, we see that
+    \begin{align*}
+        \Phi\of{\brac{\gamma} \circ \brac{\gamma'}}
+        &= \brac{\bar{\alpha} \star \gamma \star \gamma' \star \alpha} \\
+        &= \brac{\bar{\alpha} \star \gamma \star \alpha \star \bar{\alpha} \star \gamma' \star \alpha} \\
+        &= \brac{\bar{\alpha} \star \gamma \star \alpha} \circ \brac{\bar{\alpha} \star \gamma' \star \alpha} \\
+        &= \Phi\of{\brac{\gamma}} \circ \Phi\of{\brac{\gamma'}}
+    \end{align*}
+    Finally, we can define $\Phi\inv : \pi_1\of{X, x_1} \to \pi_1\of{X, x_0}$ by
+    \begin{align*}
+        \Phi\inv\of{\brac{\gamma}} := \brac{{\alpha} \star \gamma \star \bar{\alpha}}
+    \end{align*}
+    It's not hard to show this is a two-sided inverse.
+\end{proof}
+
+Finally, we show that $\pi_1$ is functorial.
+
+\begin{boxproposition}
+    Let $X$ and $Y$ be topological spaces. Fix a basepoint $x_0 \in X$. For any continuous function $f : X \to Y$, the map
+    \begin{align*}
+        f_* : \pi_1\of{X, x_0} \to \pi_1\of{Y, f\of{x_0}} : \gamma \mapsto \brac{f \circ \gamma}
+    \end{align*}
+    is a well-defined homomorphism of groups.
+\end{boxproposition}
+\begin{proof}
+\sorry
+    
+\end{proof}
+
+% Section break maybe? Let's see where this goes 
+
+\subsection{Homotopy Invariance}
+
+In our initial discussion, we said we wanted the fundamental group to be invariant under certain kinds of deformations of spaces. We begin by defining these deformations and 
+
+\begin{boxdefinition}[Homotopy Equivalence of Spaces] 
+    Let $X$ and $Y$ be topological spaces. If there are maps $f : X \to Y$ and $g : Y \to X$ such that $f \circ g \simeq \id_Y$ and $g \circ f \simeq \id_X$, then we say $X$ and $Y$ are \textbf{homotopy equivalent}. We write $X \simeq Y$.
+\end{boxdefinition}
+% ^ Note this is trivially equal to saying categorical equivalence of the fundamental groupoid i think.
+
+There are many well-known examples of homotopy equivalences of spaces. At some point, we will probably look at \textbf{contractible spaces}, which are spaces that are homotopic to a point.
+
+\begin{boxexample}[Contractibility of the Unit Interval]
+    $I \simeq \set{0}$ via the maps
+    \begin{align*}
+        f : I \to \set{0} : t \mapsto 0
+        \qquad
+        g : \set{0} \to I : 0 \mapsto 0
+    \end{align*}
+    Obviously, $f \circ g = \id_{\set{0}}$. We only need a homotopy in the other direction. Indeed, it's not hard to show that
+    \begin{align*}
+        H : I \times I \to I : (s, t) \mapsto st
+    \end{align*}
+    gives the homotopy $g \circ f \simeq \id_I$.
+\end{boxexample}
+
+We can see the above example as indicative of a more general pattern - if we have spaces $X$ and $Y$ with $Y\ssq X$, then it seems that $X$ and $Y$ should be homotopic if there are no ``holes'' in $X\setminus Y$.
+
+\begin{boxdefinition}[Deformation Retraction]
+    Let $X$ be a topological space. Fix $A \ssq X$ and let $i : A \inj X$ denote the inclusion. A map $r : X \to A$ is a \textbf{deformation retraction} if $r \circ i = \id_A$ and $i \circ r \simeq \id_X$.
+\end{boxdefinition}
+
+See also \cite[Ch 4, \S 4, Définition 4.3]{EPFLTopologie}.
+
+A special property of deformation retractions is that they induce inclusions of fundamental groups.
+
+\begin{boxconvention}
+    Going forward, unless otherwise specified, arbitrary spaces $X, Y, Z$ etc will be assumed to be path-connected (hopefully for obvious and unproblematic reasons). We will also often omit the basepoint if we know we are working in a path-connected space.
+\end{boxconvention}
+
+\begin{boxlemma}
+    Let $X$ and $Y$ be (path-connected) spaces and let $f_0, f_1 : X \to Y$ be homotopic. Then, $\parenth{f_0}_* = \parenth{f_1}_*$.
+\end{boxlemma}
+\begin{proof}
+    Let $H : X \times I \to Y$ be a homotopy between $f_0$ and $f_1$. The idea is to show that for all $\gamma \in \pi_1\of{X}$, the path $f_1 \circ \gamma$ is homotopic to the path $f_0 \circ \gamma$. \sorry
+\end{proof}
+
+% TODO: This should precede the discussion on deformation retractions, so it should eventually be moved. In fact all of this should be reorganised in to a new section.
+\begin{boxtheorem}
+    If we have $X\simeq Y$ then $\pi_1(X, x_0)\cong \pi_1(Y, y_0)$.
+\end{boxtheorem}
+\begin{proof}
+    Assume we have (continuous) functions $f : X \to Y$ and $g : Y \to X$ such that $f \circ g \simeq \id_Y$ and $g \circ f \simeq \id_X$. We know show that $f_* : \pi_1\of{X, x_0} \to \pi_1\of{Y, f\of{x_0}}$ is a homomorphism; in fact, we will show it is an \textit{iso}morphism. It may not be true that $y_0 = f\of{x_0}$, but since $Y$ is path-connected, we know we have an isomorphism between $\pi_1\of{Y, f\of{x_0}}$ and $\pi_1\of{Y, y_0}$.
+
+    \sorry % Just apply preceding lemma
+\end{proof}
+
+One more useful definition.
+
+\subsection{The Fundamental Group of the Circle}
+
+It is well-known that the fundamental group of the circle (based at any point) is isomorphic to $\Z$. How might one see this?
+
+Let's begin by parametrising the circle in a natural way. Define $p : \R \to S^1 : x \mapsto \parenth{\pcos{2\pi x}, \psin{2\pi x}}$. So when we restrict $p$ to $I$, we go around the circle exactly once.
+
+$p$ is not invertible. In fact, $p$ is periodic, so any point actually has infinitely many pre-images. But $p$ is \textit{locally invertible}: $p$ is invertible on $[0, 1)$, for instance, and all subsets and translates of such subsets. 
+
+Define, for all $n \in \Z$, the map $\Tilde{\gamma}_n : I \to \R : x \mapsto nx$.
+
+\begin{boxlemma}
+    Let $\gamma : I \to S^1$ be a loop based at $x_0 = (1, 0) \in S^1$. Let $\Tilde{\gamma} : I \to \R$ be the angle of $\gamma$, in the sense that $\Tilde{\gamma}(0) = 0$, $\Tilde{\gamma}$ is continuous, and $\gamma = p \circ \Tilde{\gamma}$. Then, $\gamma \hdi \Tilde{\gamma}_n$, where $n = \Tilde{\gamma}(1)$. [Teresa correction: conclusion should be ``then $\gamma^n\hdi p\circ \tilde{\gamma}_n$.'']
+\end{boxlemma}
+\begin{proof}
+    \sorry
+\end{proof}
+
+Next, we recall Brouwer's Fixed Point Theorem.
+\begin{boxtheorem}[Brouwer's Fixed Point Theorem, BFPT]
+    Any continuous function from the closed unit disc to itself has a fixed point.
+\end{boxtheorem}
+
+\begin{boxlemma}
+    $\pi_1\of{S^1}$ is nontrivial.
+\end{boxlemma}
+\begin{proof}
+    Suppose not. Then, for all (continuous) $\gamma : I \to S^1$, there is a homotopy $H : I \times I \to S^1$ with $H(x, 0) = \gamma(x)$ and $H(x, 1) = (1, 0)$. That is, $\gamma$ is homotopic to the constant path centred at $(1, 0)$. Given that such an $H$ exists, we can find a homotopy $\hat{H}:S^1\times I \rightarrow S^1$, which takes $S^1$ to $H(x,1)=(1,0)$ - also, assume the result of Brouwer's FPT (which can be proved without reference to the fundamental group). Then quotienting $S^1\times I$ by $S^1\times \{1\}$, we will actually obtain $B^2$ - but this is a continuous map from $B^2$ to itself with many fixed points (contradicting the result of Brouwer's FPT) \textcolor{red}{???}
+\end{proof}
+
+% Thank you - sorry for vanishing (ironically because there was a discussion on the sphere packing zulip about a function vanishing)
+
+%not at all, sorry for being absent for a while :,))
+
+% dw about it!! you're fine
+
+\subsection{The Fundamental Group of the Real Projective Plane}
+
+We begin by defining the real projective plane.
+
+\begin{boxdefinition}[Real Projective Plane]
+    The \textbf{Real Projective Plane}, denoted $\R P^2$, is defined to be the quotient space
+    \begin{align*}
+        \quotient{S^2}{x \sim -x}
+    \end{align*}
+    where $x \sim -x$ denotes the \textbf{antipodal relation} on $S^2$.
+\end{boxdefinition}
+
+One can easily show the antipodal relation to be an equivalence relation.
+
+We can visualise $\R P^2$ to be a disc whose boundary is divided into two segments that are identified antipodally: \sorry\todo{Insert picture}
+
+Intuitively, we can think about what loops look like in this space.
+
+There's really only one thing to think about: is a loop homotopically trivial or not? If a loop does not go from one pole to another, it is; if it does cross opposite poles, then it is not.
+
+\begin{boxlemma}
+    $\pi_1\of{S^2}$ is trivial.
+\end{boxlemma}
+\begin{proof}
+    For any point $y \in S^2$, one can show that $S^2 \setminus \set{y}$ is homeomorphic to $\R^2$ via stereographic projection. So any loop that misses $y$ is homotopic to a point. Thus, as long as we know that every loop misses \textit{some} point, we know that that loop is homotopic to a point.
+
+    Now suppose, for contradiction, that there is some loop $\gamma$ in $S^2$ that is \textit{surjective}---ie, it misses \textit{no points}. We show that $\gamma$ is homotopic, with fixed endpoints, to a loop $\alpha$ that agrees with $\gamma$ everywhere except for an $\eps$-ball around $x_0$, and $\alpha$ does not map to $B\of{-x_0, \eps}$.
+    
+    \sorry
+\end{proof}

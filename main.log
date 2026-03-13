@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.16)  16 JAN 2026 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.13)  13 MAR 2026 02:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -45,9 +45,9 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language62). Reported on input line 105.
+(babel)             (\language27). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language62). Reported on input line 108.
+(babel)             (\language27). Reported on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
@@ -1951,19 +1951,20 @@ LaTeX Font Warning: Font shape `T1/xcmss/b/n' in size <24.88> not available
 LaTeX Font Warning: Font shape `T1/xcmss/b/n' in size <12> not available
 (Font)              Font shape `T1/xcmss/bx/n' tried instead on input line 2.
 
-)
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.53 \newpage
-              [1
+l.24 ...r}{\numberline {2}Homology}{30}{chapter.2}
+                                                  % [1
 
-] (./Chapters/0_Overview.tex
+])
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [2]
+(./Chapters/0_Overview.tex
 LaTeX Font Info:    Trying to load font information for TS1+xcmss on input line
  13.
 LaTeX Font Info:    No file TS1xcmss.fd. on input line 13.
@@ -1973,7 +1974,7 @@ LaTeX Font Warning: Font shape `TS1/xcmss/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textbullet' on input line 13.
 
-[2
+[3
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
 (./Chapters/1_Fun_Grp/1_Fun_Grp.tex
@@ -1985,14 +1986,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3]
+[4]
 Chapter 1.
-(./Chapters/1_Fun_Grp/1_1_Homotopy.tex
+(./Chapters/1_Fun_Grp/1_1_Setup.tex
 
 LaTeX Font Warning: Font shape `T1/xcmss/b/n' in size <17.28> not available
 (Font)              Font shape `T1/xcmss/bx/n' tried instead on input line 1.
 
-[4
+[5
 
 ]
 
@@ -2007,19 +2008,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
+[6]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 77.
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[6]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2046,7 +2038,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9]
+[9]) (./Chapters/1_Fun_Grp/1_2_Properties.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2066,11 +2058,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [11]
 
-LaTeX Warning: Citation 'EPFLTopologie' on page 12 undefined on input line 270.
-
-
-)) (./Chapters/2_Another Chapter/2_Another_Chapter.tex
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -2079,9 +2066,237 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 13 undefined on input line 100.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+Overfull \hbox (18.41692pt too wide) in paragraph at lines 131--132
+[]\T1/xcmss/m/n/12 Let's be-gin by parametris-ing the cir-cle in a nat-u-ral wa
+y. De-fine $\OML/cmssm/m/it/12 p \OT1/cmsmf/m/n/12 : \U/ssmsb/m/n/12 R \OMS/cms
+ssy/m/n/12 ! \OML/cmssm/m/it/12 S[] \OT1/cmsmf/m/n/12 : \OML/cmssm/m/it/12 x \O
+MS/cmsssy/m/n/12 7! []$\T1/xcmss/m/n/12 .
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]) (./Chapters/1_Fun_Grp/1_3_Covering_Spaces.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 20 undefined on input line 156.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]) (./Chapters/1_Fun_Grp/1_4_Applications.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+LaTeX Warning: Citation 'Using-Borsuk-Ulam' on page 27 undefined on input line 
+56.
+
+) (./Chapters/1_Fun_Grp/1_5_Van_Kampen.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 29 undefined on input line 28.
+
+
+Overfull \hbox (17.08258pt too wide) in paragraph at lines 28--29
+[]\T1/xcmss/m/n/12 We can sum-marise ev-ery-thing we've done so far into one gi
+-gan-tic the-o-rem. See also [[]]. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 2744) in paragraph at lines 40--41
+\T1/xcmss/m/sl/12 nor-mal sub-group gen-er-ated by $\OML/cmssm/m/it/12 i[]\OT1/
+cmsmf/m/n/12 (\OML/cmssm/m/it/12 !\OT1/cmsmf/m/n/12 )\OML/cmssm/m/it/12 i[]\OT1
+/cmsmf/m/n/12 (\OML/cmssm/m/it/12 !\OT1/cmsmf/m/n/12 )[]$ \T1/xcmss/m/sl/12 for
+ $\OML/cmssm/m/it/12 ! \OMS/cmsssy/m/n/12 2 \OML/cmssm/m/it/12 ^^Y[]  []$\T1/xc
+mss/m/sl/12 , where
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 29 undefined on input line 51.
+
+
+Overfull \hbox (3.54427pt too wide) in paragraph at lines 51--51
+[][][]\T1/xcmss/m/n/12 Right?[]  
+ []
+
+
+Overfull \hbox (3.54427pt too wide) in paragraph at lines 51--51
+[][][]\T1/xcmss/m/n/12 Right?[]  
+ []
+
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 29 undefined on input line 56.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29])) (./Chapters/2_Homology/2_Homology.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
 Chapter 2.
-(./Chapters/2_Another Chapter/2_1_Intro.tex)
-(./Chapters/2_Another Chapter/2_2_Another_Section.tex) [13
+
+LaTeX Warning: Citation 'EPFLTopologie' on page 31 undefined on input line 8.
+
+(./Chapters/2_Homology/2_1_Intro.tex [31
 
 ]
 
@@ -2092,7 +2307,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14])
+[32]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2101,7 +2316,108 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34]
+Overfull \hbox (13.81041pt too wide) detected at line 132
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[35]) (./Chapters/2_Homology/2_2_Complexes.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[37]
+
+LaTeX Warning: Citation 'ICLAlg4' on page 38 undefined on input line 115.
+
+
+LaTeX Warning: Citation 'EPFLRingsAndModules' on page 38 undefined on input lin
+e 115.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39]
+Overfull \hbox (18.1327pt too wide) detected at line 186
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40]
+
+LaTeX Font Warning: Font shape `T1/xcmss/b/it' in size <12> not available
+(Font)              Font shape `T1/xcmss/bx/it' tried instead on input line 242
+.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41]))
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
 
 LaTeX Warning: Empty bibliography on input line 73.
 
@@ -2112,7 +2428,7 @@ Overfull \hbox (2.22829pt too wide) in paragraph at lines 77--78
  ver-
  []
 
-[16] 
+[43] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -2126,8 +2442,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41A108F329BC971693B5786B2FF9659;1924.
+(rerunfilecheck)             Checksum: 54902C9C9A370404D986A690388F39EC;6354.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -2138,36 +2457,53 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57220 strings out of 474222
- 1301006 string characters out of 5748733
- 2319136 words of memory out of 5000000
- 78446 multiletter control sequences out of 15000+600000
- 592334 words of font info for 134 fonts, out of 8000000 for 9000
+ 58295 strings out of 474222
+ 1324187 string characters out of 5748733
+ 2334952 words of memory out of 5000000
+ 79355 multiletter control sequences out of 15000+600000
+ 601145 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,16n,110p,1152b,1872s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/sansmathfonts/cmssbx12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/sansmathfonts/cmsssy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/sansmathfonts/cmsssy8.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi1
-200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss24
-88.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfsx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx248
-8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sftt1440.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/sansmathfonts/ssmsbm10.pfb>
-Output written on main.pdf (17 pages, 332314 bytes).
+ 106i,19n,110p,1152b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/sansmathfonts/cmssbx12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/sansmathfonts/cmssex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/sansmathfonts/cmssmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/sansmathfonts/cmssmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/sansmathfonts/cmssmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/sansmathfonts/cmsssy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/sansmathfonts/cmsssy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/sansmathfonts/cmsssy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+it1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfsi1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfs
+o1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0700.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss
+1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfss2488.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1
+440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sftt1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt14
+40.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/ssmsam10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/ssmsbm10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
+Output written on main.pdf (44 pages, 574822 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 730 PDF objects out of 1000 (max. 8388607)
+ 588 compressed objects within 6 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 421 words of extra memory for PDF output out of 10000 (max. 10000000)
 

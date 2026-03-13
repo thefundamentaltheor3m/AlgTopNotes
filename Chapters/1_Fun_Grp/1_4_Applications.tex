@@ -1,0 +1,81 @@
+\section{Applications of the Fundamental Group (and everything else we've done so far)}
+
+\subsection{Non-Homeomorphicity of Euclidean Spaces}
+
+The following, while intuitive, is a rather difficult fact to prove: that if $m \neq n$, then $\R^m \not\cong \R^n$.
+
+The proof that $\R \not\cong \R^2$ (or, for that matter, that $\R \not\cong \R^n$ for $n > 1$) is simple: if there were a homeomorphism, then removing a point from $\R$ should give us a homeomorphism to the space obtained by removing the corresponding point from the higher-dimensional $\R^n$, but no such homeomorphism can exist, because removing a point from $\R$ disconnects $\R$ but removing a point from $\R^n$ does not disconnect $\R^n$ if $n > 1$.
+
+We can generalise this proof to show that $\R^2 \not\cong \R^n$ for $n > 2$, but we cannot do so using just connectivity; rather, we need higher notions of connectivity.
+
+\begin{boxtheorem}
+    For all $n \neq 2$, $\R^2 \neq \R^n$.
+\end{boxtheorem}
+\begin{proof}
+    We have outlined the $n = 1$ case already at the start of this subsection, so we will only do the $n > 2$ case.
+
+    Suppose $\R^2 \cong \R^n$ via some homeomorphism $f : \R^2 \to \R^n$. Then, $\R^2 \setminus \set{0} \cong \R^n \setminus \set{f(0)}$. Note that $\R^2 \setminus \set{0} \simeq S^1$ and $\R^n \setminus \set{f(0)} \simeq S^{n - 1}$. Thus, we have a homotopy equivalence from $S^1$ to $S^{n - 1}$ via
+    \begin{align*}
+        S^1 \simeq \R^2 \setminus \set{0} \cong \R^n \setminus \set{f(0)} \simeq S^{n-1}
+    \end{align*}
+    But $\pi_1\of{S^1} = \Z \not\cong 0 = \pi_1\of{S^{n-1}}$.
+\end{proof}
+
+\subsection{Surfaces and Genuses}
+
+\begin{boxtheorem}
+    The closed, orientable surface of genus $g$ is not homeomorphic to the closed, orientable surfact of genus $g' \neq g$.
+\end{boxtheorem}
+\begin{proof}[Proof sketch]
+    The two are not even homotopy equivalent, because their fundamental groups are different. Indeed, the abelianisation of the fundamental group of the COSG\footnote{closed orientable surface of genus} $g$ is $\Z^{2g}$.
+\end{proof}
+
+\subsection{The Borsuk-Ulam Theorem}
+
+\begin{boxlemma}
+    Let $\gamma : I \to S^1$ be a loop, ie, a continuous map with $\gamma(0) = \gamma(1)$. If
+    \begin{align*}
+        \gamma\of{t + \frac{1}{2}} = -\gamma(t)
+    \end{align*}
+    for all $t \in I$, then $\gamma$ is homotopically non-trivial.
+\end{boxlemma}
+\begin{proof}
+    We know that $p : \R \to S^1$ is a universal cover. Lift $\gamma$ to a path $\tg : I \to \R$, with $\tg(0) = 0$ and $p \circ \tg = \gamma$. \sorry % What is q??
+\end{proof}
+
+
+\begin{boxtheorem}[Borsuk-Ulam]
+    Given any continuous $f:S^2\rightarrow \R^2$, there exists some $x\in S^2$ such that $f(x)=(-x).$
+\end{boxtheorem}
+
+
+\begin{proof}
+    
+\end{proof}
+
+There are many applications of the Borsuk-Ulam Theorem---so many, in fact, that you can fill an entire book with them \cite{Using-Borsuk-Ulam}.
+
+One such example is the non-planarity of $K_5$, the complete graph on five vertices.
+
+\begin{boxtheorem}
+    There is no continuous injection from $K_5$ to $\R^2$.
+\end{boxtheorem}
+\begin{proof}[Proof sketch]
+    Let $C_2\of{K_5} = \setst{(x, y) \in K_5 \times K_5}{x \neq y}$. Suppose $f : K_5 \inj \R^2$ is a continuous injection. We get a map
+    \begin{align*}
+        F : C_2\of{K_5} \to S^1 : \parenth{x, y} \mapsto \frac{f(x) - f(y)}{\norm{f(x) - f(y)}}
+    \end{align*}
+    We can find $h : S^2 \to C_2\of{K_5}$ such that if $h(u) = (x, y)$ then $h(-u) = (y, x)$. Then, the map
+    \begin{cd*}
+        S_2 \arrow[r, "h"] & C_2\of{K_5} \arrow[r, "F"] & S^1
+    \end{cd*}
+    contradicts the Borsuk-Ulam Theorem.
+\end{proof}
+
+\subsection{Hanging a Rope on Two Nails}
+
+We can ask the following question: if I have two nails on a wall, how can I hang a rope on them in such a way that if I remove either one of the nails, the rope falls off?
+
+We can make the following analogy: let the wall be $\R^2$ and let the nails be points in $\R^2$. The rope corresponds to a loop, and falling off corresponds to being homotopically trivial.
+
+We know that $\R^2$ without two points is homotopic to a wedge sum of two circles, and we know this has fundamental group $F_2$, the free group on two generators. Call the generators $a$ and $b$. Our question asks if we can find a (nontrivial) element of $F_2$ such that when you remove all occurrences of either $a$ or $b$, everything cancels. But this is easy: just take $aba\inv b\inv$.

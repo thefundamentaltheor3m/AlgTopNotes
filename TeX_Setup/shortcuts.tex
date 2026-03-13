@@ -198,7 +198,7 @@
 \newcommand{\quotient}[2]{
     \left.\raisebox{.2em}{${#1}$} \middle/ \raisebox{-.2em}{${#2}$} \right.
 }
-
+\newcommand{\Zmod}[1]{\quotient{\Z}{{#1}\Z}}
 \newcommand{\Vof}[1]{V\!\parenth{#1}}
 
 \newcommand{\Frac}[1]{\operatorname{Frac}\!\parenth{#1}}
@@ -314,3 +314,24 @@
 % ALGEBRAIC TOPOLOGY
 
 \newcommand{\hdi}{\simeq_{\partial I}}
+
+\renewcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\rest}[1]{\!\vert_{#1}}
+
+\newcommand{\tx}{\Tilde{x}}
+\newcommand{\tX}{\Tilde{X}}
+\newcommand{\TX}{\Tilde{X}}
+\newcommand{\txo}{\Tilde{x_0}}
+\newcommand{\txi}{\Tilde{x_1}}
+\newcommand{\txii}{\Tilde{x_2}}
+\newcommand{\ty}{\Tilde{y}}
+\newcommand{\tg}{\Tilde{\gamma}}
+
+\newcommand{\Deck}[1]{\operatorname{Deck}\of{#1}}
+
+\newcommand{\ab}{^{\operatorname{ab}}}
+% \newcommand{\Ab}[1]{\operatorname{Ab}\of{#1}}
+
+\newcommand{\del}{\partial} 
+\newcommand{\coker}[1]{\operatorname{coker}\of{#1}}
