@@ -2372,6 +2372,8 @@
     <bcf:citekey order="8" intorder="1">EPFLTopologie</bcf:citekey>
     <bcf:citekey order="9" intorder="1">ICLAlg4</bcf:citekey>
     <bcf:citekey order="10" intorder="1">EPFLRingsAndModules</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">EPFLRingsAndModules</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">EPFLRingsAndModules</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -249,3 +249,128 @@ We can show the following fact.
         \quotient{C_n(X)}{C_n(A)}
     \end{cd*}
 \end{proof}
+
+We can also talk about nested inclusions.
+
+\begin{boxproposition}[Long Exact Sequence of a Triple]
+    Given inclusions $A \ssq B \ssq X$, the following is a short exact sequence of chain complexes:
+    \begin{cd*}
+        0 \arrow[r] & C_{\bullet}\of{B, A} \arrow[r] & C_{\bullet}\of{X, A} \arrow[r] & C_{\bullet}\of{X, B} \arrow[r] & 0
+    \end{cd*}
+\end{boxproposition}
+
+This again induces a long exact sequence of homology.
+
+\begin{boxexample}[$\star \ssq S^1 \ssq D^2$]
+    Consider a point $\star \in S^1$ and consider the inclusions given by $\set{\star} \ssq S^1 \ssq D^2$. We get a long exact sequence
+    \begin{cd*} % TODO: Fix formatting
+        \cdots \arrow[r] &[0.25em]
+        H_2\of{S^1, \star} \arrow[r] &[0.25em]
+        H_2\of{D^2, \star} \arrow[r] &[0.25em]
+        H_2\of{D^2, S^1} \arrow[r] &[0.25em]
+        H_1\of{S^1, \star} \arrow[r] &[0.25em]
+        H_1\of{D^2, \star} \arrow[r] &[0.25em]
+        H_1\of{D^2, S^1} \arrow[r] &[0.25em]
+        H_0\of{S^1, \star} \arrow[r] &[0.25em]
+        \cdots
+    \end{cd*}
+    We can use what we know about long exact sequences of a pair to compute $H_n\of{S^1, \star}$:
+    \begin{cd*} % TODO: Fix formatting
+        \cdots \arrow[r] &[0.25em]
+        \underbrace{H_n\of{\star}}_{=0} \arrow[r] &[0.25em]
+        H_n\of{S^1} \arrow[r, "\sim"] &[0.25em]
+        H_n\of{S^1, \star} \arrow[r] &[0.25em]
+        \underbrace{H_{n-1}\of{\star}}_{=0} \arrow[r] &[0.25em]
+        \cdots
+    \end{cd*}
+    In particular, $H_n\of{S^1, \star} \cong \Tilde{H_n}\of{S^1, \star}$. (And the same is true of other spaces as well, not just $S^1$.)
+    % This tells us what? How?
+\end{boxexample}
+
+\subsection{Changing the Base Group}
+
+Suppose I have a short exact sequence of abelian groups
+\begin{cd*}
+    0 \arrow[r] & A' \arrow[r] & A \arrow[r] & A'' \arrow[r] & 0
+\end{cd*}
+
+It turns out this induces the following long exact sequence of chain complexes:
+\begin{cd*}
+    0 \arrow[r] & C_{\bullet}\of{X; A'} \arrow[r] & C_{\bullet}\of{X; A} \arrow[r] & C_{\bullet}\of{X; A''} \arrow[r] & 0
+\end{cd*}
+where at every stage, we compute the cycle groups with respect to a different base group.
+
+\subsection{Good Pair}
+
+\begin{boxdefinition}[Good Pair]
+    A pair $(X, A)$ of some $A \ssq X$ is a \textbf{good pair} if $A$ is nonempty and closed and there exists a neighbourhood $V$ of $A$ in $X$ that deformation retracts to $A$.
+\end{boxdefinition}
+
+% Something something big pair property
+
+\subsection{Reconciling Singular and Simplicial Homology}
+
+Recall the Five Lemma.
+
+\begin{boxlemma}[Five Lemma]
+    Consider the following diagram in some abelian category, with the top and bottom rows both being exact:
+    \begin{cd*}
+        A & B & C & D & E \\
+    	{A'} & {B'} & {C'} & {D'} & {E'}
+    	\arrow["i", from=1-1, to=1-2]
+    	\arrow["\alpha"{description}, from=1-1, to=2-1]
+    	\arrow["j", from=1-2, to=1-3]
+    	\arrow["\beta"{description}, from=1-2, to=2-2]
+    	\arrow["k", from=1-3, to=1-4]
+    	\arrow["\gamma"{description}, from=1-3, to=2-3]
+    	\arrow["l", from=1-4, to=1-5]
+    	\arrow["\delta"{description}, from=1-4, to=2-4]
+    	\arrow["\epsilon"{description}, from=1-5, to=2-5]
+    	\arrow["{i'}", from=2-1, to=2-2]
+    	\arrow["{j'}", from=2-2, to=2-3]
+    	\arrow["{k'}", from=2-3, to=2-4]
+    	\arrow["{l'}", from=2-4, to=2-5]
+    \end{cd*}
+    The following are all true.
+    \begin{enumerate}
+        \item If $\beta, \delta$ are surjective and $\epsilon$ is injective, then $\gamma$ is surjective.
+        \item If $\beta, \delta$ are injective and $\alpha$ is surjective, then $\gamma$ is injective.
+    \end{enumerate}
+    In particular, if $\alpha, \beta\, \delta, \epsilon$ are isomorphisms, then $\gamma$ is also an isomorphism.
+\end{boxlemma}
+\begin{proof}
+    We begin the grand diagram chase. Note: we can also prove the first two as Four Lemmas - see \cite[Problem Sheet 5, Exercise 2]{EPFLRingsAndModules}. For a version of this statement, see \cite[Lemma 5.6.2]{EPFLRingsAndModules}.
+    \begin{enumerate}
+        \item Fix $c' \in C'$. There is $d \in D$ such that $\delta(d) = k'\of{c'}$. Notice that $\epsilon\of{l(d)} = l'\of{\delta(d)} = l'\of{k'\of{c'}} = 0$. Since $\epsilon$ is injective, this tells us that $l(d) = 0$. Thus, $d = k(c)$ for some $c \in C$. Then,
+        \begin{align*}
+            k'\of{c' - \gamma(c)}
+            &= k'\of{c'} - k'\of{\gamma(c)} \\
+            &= k'\of{c'} - \delta\of{k(c)} \\
+            &= k'\of{c'} - \delta(d)
+            &= 0
+        \end{align*}
+        \sorry
+
+        \item Fix $c \in C$ with $\gamma(c)$
+    \end{enumerate}
+    The union of the first two gives you immediately that if $\alpha$, $\beta$, $\delta$ and $\epsilon$ are isomorphisms, then so is $\gamma$.
+\end{proof}
+
+We are now ready to show that singular and simplicial homology are isomorphic. In fact, they are naturally isomorphic as functors.
+
+\begin{boxtheorem}
+    Let $X$ be a $\Delta$-complex and let $A \ssq X$ be a subcomplex. Then,
+    \begin{align*}
+        \underbrace{H_{\bullet}^{\Delta}\of{X, A}}_{\text{simplicial}}
+        \cong
+        \underbrace{H_{\bullet}\of{X, A}}_{\text{singular}}
+    \end{align*}
+    naturally in $X$ and $A$.
+\end{boxtheorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{boxexample}[A Weird Pathology]
+    Define a $\Delta$-complex by gluing together countably many copies of the unit interval at the same endpoint. So it looks like an asterisk with countably many spokes (the caveat being this space is actually not metrisable, and in particular, doesn't embed into any Euclidean space, let alone the plane). A path that goes halfway along the first spoke before going back to the vertex, a quarter of the way along the second before going back to the vertex, an eight of the way along the third before going back, and so on. 
+\end{boxexample}

@@ -31,4 +31,10 @@
 \contentsline {subsection}{\numberline {2.2.2}Exact Sequences}{38}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Application: Homology Groups of Spheres}{41}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Excision}{41}{subsection.2.2.4}%
-\contentsline {chapter}{Bibliography}{43}{theorem.2.2.15}%
+\contentsline {subsection}{\numberline {2.2.5}Changing the Base Group}{43}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Good Pair}{43}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Reconciling Singular and Simplicial Homology}{43}{subsection.2.2.7}%
+\contentsline {chapter}{\numberline {3}Cohomology}{46}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Some Motivation}{46}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Degrees of Maps on $n$-Spheres}{46}{subsection.3.1.1}%
+\contentsline {chapter}{Bibliography}{50}{theorem.3.1.7}%
